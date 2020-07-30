@@ -5,6 +5,7 @@ const next = require('next');
 const { default: createShopifyAuth } = require('@shopify/koa-shopify-auth');
 const { verifyRequest } = require('@shopify/koa-shopify-auth');
 const session = require('koa-session');
+const { createScriptTag } = require('./function.util');
 
 dotenv.config();
 
@@ -30,7 +31,11 @@ app.prepare().then(() => {
                 const { shop, accessToken } = ctx.session;
                 console.log("after auth: ", accessToken, shop)
 
+                await createScriptTag()
+
                 ctx.redirect('/');
+
+
             },
         }),
     );
