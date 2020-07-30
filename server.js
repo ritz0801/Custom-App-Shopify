@@ -14,6 +14,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env;
+console.log("api key: ", SHOPIFY_API_KEY, SHOPIFY_API_SECRET_KEY)
 
 app.prepare().then(() => {
     const server = new Koa();
