@@ -22,7 +22,7 @@ class HomePage extends Component {
                 // error in next
                 // onClick = {()=> this.setState(prevState => ({isShow: !prevState.isShow}))}
                 >
-                    Toggle
+                    Toggle Welcome 11
                 </div>
 
                 <Link href="/auth">
